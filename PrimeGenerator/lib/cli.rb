@@ -26,14 +26,15 @@ class Cli
 	end
 
 	def display_grid
+		prime_numbers = generate_primes
 		puts "Prime number multiplication table:"
 		print "\t"
-		print generate_primes.join("\t").neon
+		print prime_numbers.join("\t").neon
 		puts ""
-		generate_primes.each do |num1|
+		prime_numbers.each do |num1|
 			print num1.to_s.neon
 			print "\t"
-			generate_primes.each do |num2|
+			prime_numbers.each do |num2|
 				print num1 * num2
 				print "\t"
 			end

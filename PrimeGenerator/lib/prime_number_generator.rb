@@ -10,6 +10,8 @@ class PrimeNumberGenerator
 				collector << current
 				generated += 1
 			end
+			# increment = current == 2 ? 1 : 2
+			# current += increment
 			current += 1
 		end
 		collector
@@ -18,9 +20,8 @@ class PrimeNumberGenerator
 	def is_prime?(number)
 		return false if (number > 2 && number.even?)
 		check_until = Math.sqrt(number).floor
-		values = (2..check_until).select do |n|
+		values = (2..check_until).detect do |n|
 			(number % n).zero?
-		end
-		!values.any?
+		end.nil?
 	end
 end
