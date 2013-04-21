@@ -10,8 +10,6 @@ class PrimeNumberGenerator
 				collector << current
 				generated += 1
 			end
-			# increment = current == 2 ? 1 : 2
-			# current += increment
 			current += 1
 		end
 		collector

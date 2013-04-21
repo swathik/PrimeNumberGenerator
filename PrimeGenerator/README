@@ -1,0 +1,13 @@
+To Generate n prime number multiplication table:
+
+Default: displays multiplication table for first 10 prime numbers
+
+ruby run.rb
+
+To display n prime numbers multiplication table
+
+ex: ruby run.rb 50
+
+To run tests
+
+rake test
