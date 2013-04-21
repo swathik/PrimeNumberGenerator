@@ -3,6 +3,7 @@ GEM
     activesupport (3.2.7)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    color_text (0.0.3)
     i18n (0.6.4)
     multi_json (1.6.1)
     rake (10.0.3)
@@ -17,6 +18,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  color_text
   rake
   shoulda
   shoulda-context

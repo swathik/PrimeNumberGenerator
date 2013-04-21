@@ -2,7 +2,6 @@ require "test/unit"
 require "lib/cli"
 require "shoulda"
 require "shoulda-context"
-require "mocha"
 
 class CliTest < Test::Unit::TestCase
 

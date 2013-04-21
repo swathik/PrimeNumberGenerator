@@ -3,3 +3,4 @@
  gem 'shoulda-context'
  gem 'shoulda'
  gem 'rake'
+ gem 'color_text'

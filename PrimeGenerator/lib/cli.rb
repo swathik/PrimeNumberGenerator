@@ -1,4 +1,3 @@
-require 'matrix'
 require 'color_text'
 require_relative './prime_number_generator'
 
