@@ -18,7 +18,7 @@ class Cli
 	end
 
 	def validate
-		@count.match(/^[0-9]+$/)
+		@count.match(/^[1-9][0-9]*$/)
 	end
 
 	def generate_primes

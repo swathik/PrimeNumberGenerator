@@ -1,22 +1,21 @@
 class PrimeNumberGenerator
 
 	def generate_primes(count)
-		current 	= 2
-		generated = 0
-		collector = []
+		current 	= 3
+		generated = 1
+		collector = [2]
 		while(true)
 			break if generated == count
 			if is_prime?(current)
 				collector << current
 				generated += 1
 			end
-			current += 1
+			current += 2 # check only odd numbers
 		end
 		collector
 	end
 
 	def is_prime?(number)
-		return false if (number > 2 && number.even?)
 		check_until = Math.sqrt(number).floor
 		values = (2..check_until).detect do |n|
 			(number % n).zero?
