@@ -3,7 +3,3 @@ task :test do
 		ruby "-I . test/#{file}.rb"
 	end
 end
-
-task :run do
-	ruby "-I . lib/run.rb"
-end

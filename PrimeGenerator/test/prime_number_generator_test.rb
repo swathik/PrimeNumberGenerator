@@ -2,7 +2,6 @@ require "test/unit"
 require "lib/cli"
 require "shoulda"
 require "shoulda-context"
-require "mocha"
 
 class PrimeNumberGeneratorTest < Test::Unit::TestCase
 	context "Generator" do

@@ -4,43 +4,36 @@ require_relative './prime_number_generator'
 
 class Cli
 
-	def start
-		count = ""
-		while(true)
-			puts "Please enter the count: (the number of prime numbers). Enter X to quit"
-			count = gets.chomp
-			break if count == "x"
-			if validate(count)
-				start_time = Time.now
-				prime_numbers = generate_primes(count)
-				display_grid(prime_numbers)
-				end_time = Time.now
+	def initialize(count)
+		@count = count
+	end
 
-				puts "TIME TAKEN : #{end_time - start_time} seconds".green
-			else
-				puts "Please enter valid number"
-			end
+	def start
+		if validate
+			start_time = Time.now
+			display_grid
+			end_time = Time.now
+			puts "TIME TAKEN : #{end_time - start_time} seconds".green
 		end
 	end
 
-	def validate(count)
-		return if count == "x"
-		count.match(/^[0-9]+$/)
+	def validate
+		@count.match(/^[0-9]+$/)
 	end
 
-	def generate_primes(count)
-		PrimeNumberGenerator.new.generate_primes(count.to_i)
+	def generate_primes
+		PrimeNumberGenerator.new.generate_primes(@count.to_i)
 	end
 
-	def display_grid(prime_numbers)
+	def display_grid
 		puts "Prime number multiplication table:"
 		print "\t"
-		print prime_numbers.join("\t").neon
+		print generate_primes.join("\t").neon
 		puts ""
-		prime_numbers.each do |num1|
+		generate_primes.each do |num1|
 			print num1.to_s.neon
 			print "\t"
-			prime_numbers.each do |num2|
+			generate_primes.each do |num2|
 				print num1 * num2
 				print "\t"
 			end

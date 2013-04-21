@@ -9,7 +9,7 @@ class CliTest < Test::Unit::TestCase
 	context "validate input" do
 
 		def valid(number)
-			Cli.new.validate(number)
+			Cli.new(number).validate
 		end
 
 		should "be valid for number input" do
@@ -20,10 +20,10 @@ class CliTest < Test::Unit::TestCase
 			assert !valid("hello")
 		end 
 	end
-
-	context "Grid" do
-		should "display multiplication of primes" do
-			
+	
+	context "Generate Primes" do
+		should "return first n primes" do
+			assert_equal [2, 3, 5, 7, 11, 13, 17, 19, 23, 29], Cli.new("10").generate_primes
 		end
 	end
 end
