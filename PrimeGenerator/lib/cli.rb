@@ -9,7 +9,7 @@ class Cli
 		while(true)
 			puts "Please enter the count: (the number of prime numbers). Enter X to quit"
 			count = gets.chomp
-			break if count == "X"
+			break if count == "x"
 			if validate(count)
 				start_time = Time.now
 				prime_numbers = generate_primes(count)
@@ -24,7 +24,7 @@ class Cli
 	end
 
 	def validate(count)
-		return if count == "X"
+		return if count == "x"
 		count.match(/^[0-9]+$/)
 	end
 
@@ -33,7 +33,7 @@ class Cli
 	end
 
 	def display_grid(prime_numbers)
-		puts "Prime number multiplication table is:"
+		puts "Prime number multiplication table:"
 		print "\t"
 		print prime_numbers.join("\t").neon
 		puts ""
